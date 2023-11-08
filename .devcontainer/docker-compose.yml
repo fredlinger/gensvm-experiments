@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+  gensvm-experiments:
+    image: jupyter/scipy-notebook:2023-03-27
+    command:
+      [
+        'jupyter',
+        'lab',
+        '--port=8888',
+        '--no-browser',
+        "--ServerApp.token=''",
+        "--ServerApp.password=''",
+        '/workspaces/gensvm-experiments/notebooks/'
+      ]
+    ports:
+      - 45045:8888
+    volumes:
+      - ..:/workspaces/gensvm-experiments/
